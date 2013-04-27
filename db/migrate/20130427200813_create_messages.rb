@@ -5,7 +5,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :body
       t.string :from
       t.string :to
-      t.string{} :associated_images
+      t.string :associated_images
 
       t.timestamps
     end
