@@ -14,6 +14,9 @@ gem 'sqlite3'
 # Devise authentication
 gem 'devise'
 
+# Other authentication
+gem 'omniauth-facebook'
+gem 'omniauth-facebook-access-token'
 
 # Gems used only for assets and not required
 # in production environments by default.
