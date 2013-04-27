@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  users: 
+  admin_key: 
+  messages: 
+  location: MyString
+
+two:
+  name: MyString
+  users: 
+  admin_key: 
+  messages: 
+  location: MyString
