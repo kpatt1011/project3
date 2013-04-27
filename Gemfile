@@ -32,8 +32,8 @@ end
 
 gem 'jquery-rails'
 
+# Javascript runtime
 gem 'execjs'
-
 gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
