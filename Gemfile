@@ -7,8 +7,8 @@ gem 'rails', '3.2.8'
 
 
 # Heroku uses PostgreSQL database
-gem 'pg'
-#gem 'sqlite3'
+#gem 'pg'
+gem 'sqlite3'
 
 
 # Devise authentication
