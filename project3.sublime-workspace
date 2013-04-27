@@ -79,6 +79,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "//ubuntu/keith/project3/config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1904,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -140,6 +148,8 @@
 	},
 	"file_history":
 	[
+		"//ubuntu/keith/project3/config/routes.rb",
+		"//ubuntu/keith/project3/Gemfile",
 		"//ubuntu/keith/project3/project3",
 		"//ubuntu/keith/csce313/mp4/mp4_2013A.pdf",
 		"//ubuntu/keith/csce313/mp4/client.c",
@@ -279,8 +289,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "//ubuntu/keith/project3/config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 1904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								792,
+								792
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

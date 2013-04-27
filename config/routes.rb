@@ -1,9 +1,13 @@
 Project3::Application.routes.draw do
+  resources :pages
+
   resources :groups
 
   resources :messages
 
   resources :users
+
+  root :to => 'pages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
