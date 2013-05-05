@@ -6,6 +6,7 @@
 </p>
 
 <p>
+
   <b>Is admin:</b>
   <%= @user.is_admin %>
 </p>
@@ -20,6 +21,13 @@
   <%= @user.group %>
 </p>
 
+<p>
+	<b>Messages</b>
+	<%= @user.messages %>
+</p>
 
+<a class="btn btn-primary">
+	Test
+</a>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
