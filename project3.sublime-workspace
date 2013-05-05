@@ -80,10 +80,29 @@
 	"buffers":
 	[
 		{
-			"file": "//ubuntu/keith/project3/config/routes.rb",
+			"file": "config/routes.rb",
 			"settings":
 			{
 				"buffer_size": 1904,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/pages/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "class User < ActiveRecord::Base\n\n  has_many :messages\n\n  attr_accessible :group, :is_admin, :key, :name\n\n  validates :key, :presence => true, :uniqueness => true\n  validates :name, :presence => true\nend\n",
+			"file": "app/models/user.rb",
+			"file_size": 205,
+			"file_write_time": 130117442055527450,
+			"settings":
+			{
+				"buffer_size": 203,
 				"line_ending": "Unix"
 			}
 		}
@@ -289,12 +308,12 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "//ubuntu/keith/project3/config/routes.rb",
+					"file": "config/routes.rb",
 					"settings":
 					{
 						"buffer_size": 1904,
@@ -304,8 +323,8 @@
 						"selection":
 						[
 							[
-								792,
-								792
+								707,
+								707
 							]
 						],
 						"settings":
@@ -313,6 +332,60 @@
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/pages/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								396,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								54,
+								54
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

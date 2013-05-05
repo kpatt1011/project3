@@ -6,9 +6,13 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-# Heroku uses PostgreSQL database
-#gem 'pg'
-gem 'sqlite3'
+# use sqlite3 on development, postgres on heroku production
+group :development do
+ gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 
 
 # Devise authentication
