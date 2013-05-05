@@ -22,9 +22,13 @@
     <td><%= link_to user.name, user_path(user) %></td>
   </tr>
   <% end %>
-
- 
 </p>
+
+<p>
+  <b>Group Code</b>
+  <%= @Group.object_id %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_group_path(@group) %> |

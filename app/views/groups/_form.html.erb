@@ -23,7 +23,25 @@
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </div>
+
+<p>
+  <b>Users</b>
+  <% @group.users.each do |user|   %>
+  <tr>
+    <td><%= link_to user.name, user_path(user) %></td>
+  </tr>
+  <% end %>
+</p>
+
+<p>
+  <b>Group Code</b>
+  <%= @Group.object_id %>
+</p>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

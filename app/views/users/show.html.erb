@@ -18,16 +18,36 @@
 
 <p>
   <b>Group:</b>
-  <%= @user.group %>
+  <%= @user.group.name %>
 </p>
 
 <p>
-	<b>Messages</b>
-	<%= @user.messages %>
+
+  <b>Group Members</b>
+
+  <% @user.group.users.each do |u| %>
+  <br/>
+  <tr>
+    <%= link_to u.name, user_path(u) %>
+  </tr>
+  <br/>
+  <% end %>
+
 </p>
 
-<button class="btn btn-primary primary">
-	Test
-</button>
+
+
+<p>
+	<b>Recieved Messages</b>
+  <br/>
+	<% @user.messages.each do |m| %>
+  <tr>
+    <%= link_to m.from, message_path(m) %>
+    <br/>
+  </tr>
+
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
