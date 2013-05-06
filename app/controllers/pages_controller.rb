@@ -12,6 +12,7 @@ class PagesController < ApplicationController
 
   def editNiceThings
     @pages = Page.all
+    @messages = Message.all
       respond_to do |format|
         format.html
         format.json { render json: @pages }

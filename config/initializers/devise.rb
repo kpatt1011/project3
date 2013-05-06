@@ -1,6 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+   require "omniauth-facebook"
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
@@ -213,7 +214,6 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-   require "omniauth-facebook"
    config.omniauth :facebook, '136999566485816', 'ea7bcffd7a8b3844202b227bcf97bef9', :strategy_class => OmniAuth::Strategies::Facebook
 
   # THE FOLLOWING TWO LINES ARE NEEDED FOR HEROKU

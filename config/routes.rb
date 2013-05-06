@@ -1,5 +1,5 @@
 Project3::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :pages
 
@@ -22,6 +22,8 @@ Project3::Application.routes.draw do
   match 'messages/groups' => 'groups#index'
 
   match 'pages_editNiceThings' => 'pages#editNiceThings'
+  match 'pages_viewGroup' => 'pages#viewGroup'
+  match 'pages_joinGroup' => 'pages#joinGroup'
   match 'home' => 'pages#index'
 
 
