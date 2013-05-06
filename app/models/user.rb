@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :group, :is_admin, :key, :name, :group_id, :email, :password, :password_confirmation, :remember_me, :provider, :uid
+  attr_accessible :group, :is_admin, :key, :name, :group_id, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :image_url
 
   has_many :messages, :class_name => 'Message'
   belongs_to :group
@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
                          provider: auth.provider,
                          uid: auth.uid,
                          email: auth.info.email,
-                         password: Devise.friendly_token[0,20]
+                         password: Devise.friendly_token[0,20],
+                         image_url: auth.info.image
                          )
     end
     user

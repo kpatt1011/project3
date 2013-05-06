@@ -45,7 +45,9 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     @message.user = User.where(:name => @message.to).first
     @message.from = @message.user.name
-    @message.associated_images = request.env["omniauth.auth"].picture
+    unless @message.user.image_url.nil?
+        @message.associated_images = @message.user.image_url
+    end
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
