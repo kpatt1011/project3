@@ -1,0 +1,13 @@
+class User < ActiveRecord::Base
+
+  has_many :messages
+
+  attr_accessible :group, :is_admin, :key, :name
+<<<<<<< HEAD
+  
+  validates :key, :presence => true, :uniqueness => true
+  validates :name, :presence => true
+end
+=======
+end
+>>>>>>> 8967e200b062de3efcd73a0fb012a41f85712712
