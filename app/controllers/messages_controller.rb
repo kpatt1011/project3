@@ -16,8 +16,8 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
-    if @message.user.group
-
+    if not(@message.user.group.messages_released)
+      @message = nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }
@@ -87,4 +87,5 @@ class MessagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+end
 end
