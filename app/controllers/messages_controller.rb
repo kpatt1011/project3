@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    # Only get the messages for the user currently signed in
     @messages = Message.where(:to => current_user.name)
 
     respond_to do |format|
@@ -46,7 +47,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render json: @message, status: :created, location: @message }
+        format.json { render json: @message, status: :created, location: @message, picture: request.env["omniauth.auth"].picture }
       else
         format.html { render action: "new" }
         format.json { render json: @message.errors, status: :unprocessable_entity }
