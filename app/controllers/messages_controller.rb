@@ -44,9 +44,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.user = User.where(:name => @message.to).first
-    @message.from = @message.user.name
-    unless @message.user.image_url.nil?
-        @message.associated_images = @message.user.image_url
+    @message.from = current_user.name
+    unless current_user.image_url.nil?
+        @message.associated_images = current_user.image_url
     end
     respond_to do |format|
       if @message.save
