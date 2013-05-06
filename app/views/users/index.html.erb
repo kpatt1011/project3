@@ -14,7 +14,11 @@
   <tr>
    <td  style="padding-right:10px;"><%= user.name %></td>
     <td  style="padding-right:10px;"><%= user.is_admin %></td>
-    <td  style="padding-right:10px;"><%= user.group.name %></td>
+    <td  style="padding-right:10px;">
+    	<% unless user.group.nil? %>
+    		<%= user.group.name %>
+    	<% end %>
+    </td>
     <td  style="padding-right:10px;"><%= button_to 'Show', user, :class => "btn btn-info btn-mini",  :method => :get %></td>
     <td  style="padding-right:10px;"><%= button_to 'Edit', edit_user_path(user), :class => "btn btn-primary btn-mini",  :method => :get %></td>
     <td  style="padding-right:10px;"><%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini",  :method => :get %></td>
