@@ -72,12 +72,12 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
-    omniauth-facebook (1.4.1)
-      omniauth-oauth2 (~> 1.1.0)
+    omniauth-facebook (1.4.0)
+      omniauth-oauth2 (~> 1.0.2)
     omniauth-facebook-access-token (0.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
-    omniauth-oauth2 (1.1.1)
+    omniauth-oauth2 (1.0.3)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
@@ -143,7 +143,7 @@ DEPENDENCIES
   execjs
   jquery-rails
   omniauth
-  omniauth-facebook
+  omniauth-facebook (= 1.4.0)
   omniauth-facebook-access-token
   pg
   rails (= 3.2.8)
