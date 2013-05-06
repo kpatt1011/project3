@@ -19,6 +19,7 @@ end
 gem 'devise'
 
 # Other authentication
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-facebook-access-token'
 
