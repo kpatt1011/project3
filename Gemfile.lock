@@ -142,6 +142,7 @@ DEPENDENCIES
   devise
   execjs
   jquery-rails
+  omniauth
   omniauth-facebook
   omniauth-facebook-access-token
   pg
