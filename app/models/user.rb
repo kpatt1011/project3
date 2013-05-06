@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   has_many :messages, :class_name => 'Message'
   belongs_to :group
 
-  validates :key, :presence => true, :uniqueness => true
+  validates :key, :uniqueness => true
   validates :name, :presence => true
 end
