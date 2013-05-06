@@ -80,29 +80,99 @@
 	"buffers":
 	[
 		{
-			"file": "config/routes.rb",
+			"file": "app/views/users/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 1904,
+				"buffer_size": 602,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/pages/index.html.erb",
+			"file": "app/models/group.rb",
 			"settings":
 			{
-				"buffer_size": 397,
+				"buffer_size": 229,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "class User < ActiveRecord::Base\n\n  has_many :messages\n\n  attr_accessible :group, :is_admin, :key, :name\n\n  validates :key, :presence => true, :uniqueness => true\n  validates :name, :presence => true\nend\n",
 			"file": "app/models/user.rb",
-			"file_size": 205,
-			"file_write_time": 130117442055527450,
 			"settings":
 			{
-				"buffer_size": 203,
+				"buffer_size": 260,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<h1>Listing groups</h1>\n\n<table>\n  <tr>\n    <th>Name</th>\n    <th>Location</th>\n    <th></th>\n  </tr>\n\n<% @groups.each do |group| %>\n  <tr>\n    <td style=\"padding-right:10px;\"><%= group.name %></td>\n    <td style=\"padding-right:10px;\"><%= group.location %></td>\n    <td  style=\"padding-right:10px;\"><%= button_to 'Show', group, :class => \"btn btn-info btn-mini\",  :method => :get %></td>\n    <td  style=\"padding-right:10px;\"><%= button_to 'Edit', edit_group_path(group), :class => \"btn btn-primary btn-mini\", :method => :get %></td>\n    <td><%= button_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' }, :class => \"btn btn-danger btn-mini\",  :method => :get %> </td>\n  </tr>\n<% end %>\n</table>\n\n<br />\n\n<%= button_to 'Create Group', new_group_path, :class => \"btn btn-success btn-mini\",  :method => :get %>",
+			"file": "app/views/groups/index.html.erb",
+			"file_size": 828,
+			"file_write_time": 130122583750789773,
+			"settings":
+			{
+				"buffer_size": 827,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<h1>Editing group</h1>\n\n<%= render 'form' %>\n\n<%= link_to 'Show', @group %> |\n<%= link_to 'Back', groups_path %>\n",
+			"file": "app/views/groups/edit.html.erb",
+			"file_size": 113,
+			"file_write_time": 130115670550192079,
+			"settings":
+			{
+				"buffer_size": 113,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/groups/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "class Message < ActiveRecord::Base\n  belongs_to :user\n  attr_accessible :associated_images, :body, :from, :title, :to, :user_id\n\n  validates :body, :presence => true\n  validates :from, :presence => true\n  validates :to, :presence => true\nend\n",
+			"file": "app/models/message.rb",
+			"file_size": 244,
+			"file_write_time": 130122487184061118,
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/users/edit.html.erb",
+			"settings":
+			{
+				"buffer_size": 110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/users/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 781,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/groups/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 904,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/users/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 627,
 				"line_ending": "Unix"
 			}
 		}
@@ -167,8 +237,24 @@
 	},
 	"file_history":
 	[
+		"//ubuntu/keith/project3/app/assets/javascripts/application.js",
+		"//ubuntu/keith/project3/app/views/groups/_form.html.erb",
+		"//ubuntu/keith/project3/app/views/users/show.html.erb",
+		"//ubuntu/keith/project3/app/views/messages/_form.html.erb",
+		"//ubuntu/keith/project3/app/views/messages/edit.html.erb",
+		"//ubuntu/keith/project3/app/views/users/_form.html.erb",
+		"//ubuntu/keith/project3/app/controllers/users_controller.rb",
+		"//ubuntu/keith/project3/app/views/users/edit.html.erb",
+		"//ubuntu/keith/project3/app/models/message.rb",
+		"//ubuntu/keith/project3/app/models/user.rb",
 		"//ubuntu/keith/project3/config/routes.rb",
+		"//ubuntu/keith/project3/app/views/pages/index.html.erb",
+		"//ubuntu/keith/project3/app/assets/stylesheets/application.css.scss",
+		"//ubuntu/keith/project3/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
 		"//ubuntu/keith/project3/Gemfile",
+		"//ubuntu/keith/project3/config/application.rb",
+		"//ubuntu/keith/project3/app/assets/stylesheets/application.css",
+		"//ubuntu/keith/project3/config/environment.rb",
 		"//ubuntu/keith/project3/project3",
 		"//ubuntu/keith/csce313/mp4/mp4_2013A.pdf",
 		"//ubuntu/keith/csce313/mp4/client.c",
@@ -226,6 +312,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"//=",
+			"pipeline",
+			"config.ac",
+			"config",
 			"cwrite",
 			"253",
 			"sleep",
@@ -308,51 +398,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/routes.rb",
+					"file": "app/views/users/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 1904,
+						"buffer_size": 602,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								707,
-								707
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/pages/index.html.erb",
-					"settings":
-					{
-						"buffer_size": 397,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								396,
-								355
+								321,
+								321
 							]
 						],
 						"settings":
@@ -368,19 +430,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/models/user.rb",
+					"buffer": 1,
+					"file": "app/models/group.rb",
 					"settings":
 					{
-						"buffer_size": 203,
+						"buffer_size": 229,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								54,
-								54
+								166,
+								166
 							]
 						],
 						"settings":
@@ -389,6 +451,250 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								260,
+								260
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/groups/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								471,
+								524
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/groups/edit.html.erb",
+					"settings":
+					{
+						"buffer_size": 113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/groups/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								190
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/models/message.rb",
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/users/edit.html.erb",
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/views/users/_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/views/groups/_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 904,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								837,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/views/users/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								545,
+								545
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -441,6 +747,94 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"usershow",
+				"app/views/users/show.html.erb"
+			],
+			[
+				"groupform",
+				"app/views/groups/_form.html.erb"
+			],
+			[
+				"applicati",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"form",
+				"app/views/users/_form.html.erb"
+			],
+			[
+				"userform",
+				"app/views/users/_form.html.erb"
+			],
+			[
+				"useredit",
+				"app/views/users/edit.html.erb"
+			],
+			[
+				"message",
+				"app/models/message.rb"
+			],
+			[
+				"show",
+				"app/views/groups/show.html.erb"
+			],
+			[
+				"groupedit",
+				"app/views/groups/edit.html.erb"
+			],
+			[
+				"groupsindex",
+				"app/views/groups/index.html.erb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"group",
+				"app/models/group.rb"
+			],
+			[
+				"userindex",
+				"app/views/users/index.html.erb"
+			],
+			[
+				"pagesindex",
+				"app/views/pages/index.html.erb"
+			],
+			[
+				"application",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"application.css",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"messageform",
+				"app/views/messages/_form.html.erb"
+			],
+			[
+				"messageedit",
+				"app/views/messages/edit.html.erb"
+			],
+			[
+				"user.html",
+				"app/views/users/_form.html.erb"
+			],
+			[
+				"controler",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"user.",
+				"app/views/users/edit.html.erb"
+			],
 			[
 				"client",
 				"client.c"
