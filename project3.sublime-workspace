@@ -80,10 +80,13 @@
 	"buffers":
 	[
 		{
+			"contents": "<h1>Listing users</h1>\n\n<table>\n  <tr>\n    <th>Name</th>\n    <th>Is admin</th>\n    <th>Group</th>\n    <th></th>\n    <th></th>\n    <th></th>\n  </tr>\n\n<% @users.each do |user| %>\n  <tr>\n   <td  style=\"padding-right:10px;\"><%= user.name %></td>\n    <td  style=\"padding-right:10px;\"><%= user.is_admin %></td>\n    <td  style=\"padding-right:10px;\"><%= button_to 'Show', user, :class => \"btn btn-info btn-mini\",  :method => :get %></td>\n    <td  style=\"padding-right:10px;\"><%= button_to 'Edit', edit_user_path(user), :class => \"btn btn-primary btn-mini\",  :method => :get %></td>\n    <td  style=\"padding-right:10px;\"><%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => \"btn btn-danger btn-mini\",  :method => :get %></td>\n  </tr>\n<% end %>\n</table>\n\n<br />\n\n<%= link_to 'New User', new_user_path %>45++++++++++++ \n",
 			"file": "app/views/users/index.html.erb",
+			"file_size": 834,
+			"file_write_time": 130122803547467968,
 			"settings":
 			{
-				"buffer_size": 602,
+				"buffer_size": 849,
 				"line_ending": "Unix"
 			}
 		},
@@ -99,7 +102,7 @@
 			"file": "app/models/user.rb",
 			"settings":
 			{
-				"buffer_size": 260,
+				"buffer_size": 620,
 				"line_ending": "Unix"
 			}
 		},
@@ -398,7 +401,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -406,15 +409,15 @@
 					"file": "app/views/users/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 602,
+						"buffer_size": 849,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								321,
-								321
+								848,
+								848
 							]
 						],
 						"settings":
@@ -460,20 +463,22 @@
 					"file": "app/models/user.rb",
 					"settings":
 					{
-						"buffer_size": 260,
+						"buffer_size": 620,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								260,
-								260
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -500,7 +505,7 @@
 						"settings":
 						{
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -683,8 +688,8 @@
 						"selection":
 						[
 							[
-								545,
-								545
+								626,
+								626
 							]
 						],
 						"settings":
@@ -694,7 +699,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
