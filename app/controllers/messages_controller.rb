@@ -18,6 +18,10 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     if not(@message.user.group.messages_released)
       @message = nil
+    end
+    if not((@message.user == current_user) || (@message.from == current_user.name))
+      @message = nil
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }
@@ -87,5 +91,4 @@ class MessagesController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
 end
