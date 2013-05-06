@@ -11,6 +11,7 @@
  <div class="container">
  <div class="navbar">
   <div class="navbar-inner">
+  <div class="container">
     <a class="brand" href="/">NT</a>
     <ul class="nav">
       <li class="divider-vertical"></li>
@@ -21,6 +22,16 @@
       <li><a href="messages">Messages</a></li>
       <li class="divider-vertical"></li>
     </ul>
+    <ul class="nav pull-right">
+      <li>
+   	<% if user_signed_in? %>
+    	<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  	<% else %>
+      <%= link_to 'Sign in', new_user_session_path %>
+   	<% end %>
+  </li>
+    </ul>
+  </div>
   </div>
 </div>
 
