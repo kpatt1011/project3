@@ -25,7 +25,12 @@ Project3::Application.routes.draw do
   match 'pages_viewGroup' => 'pages#viewGroup'
   match 'pages_joinGroup' => 'pages#joinGroup'
   match 'home' => 'pages#index'
+  
+  match '/auth/:provider/callback' => 'omniauth_callbacks#facebook'
 
+  devise_scope :user do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
 
   root :to => 'pages#index'
 
