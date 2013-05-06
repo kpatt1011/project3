@@ -10,7 +10,8 @@ Your user id is <%= current_user.id %>
 <br/>
 
 
-
-You are a member of <%= current_user.group.name %>
+<% unless current_user.group.nil? %>
+	You are a member of <%= current_user.group.name %>
+<% end %>
 
 

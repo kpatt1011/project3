@@ -4,7 +4,8 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     # Only get the messages for the user currently signed in
-    @messages = Message.where(:to => current_user.name)
+    @messages = Message.all
+    #@messages = Message.where(:to => current_user.name)
 
     respond_to do |format|
       format.html # index.html.erb
