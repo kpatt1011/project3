@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project3</title>
+  <title>Nice Things</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+ <div class="container">
+ <div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="users">NT</a>
+    <ul class="nav">
+      <li class="divider-vertical"></li>
+      <li class><a href="users">Users</a></li>
+      <li class="divider-vertical"></li>
+      <li><a href="groups">Groups</a></li>
+      <li class="divider-vertical"></li>
+      <li><a href="messages">Messages</a></li>
+    </ul>
+  </div>
+</div>
+
+	<%= yield %>
+
+ </div>
 
 </body>
 </html>
