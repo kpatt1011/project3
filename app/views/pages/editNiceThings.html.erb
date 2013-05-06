@@ -17,26 +17,58 @@
 		<br/><br/>
 		<h6><%= user.name %></h6>
 		<% value = "" %>
-
 		<%= form_for :message do |f| %>
-
 			<%  @messages.each do |m| %>
-
 				<% if m.from == current_user.name && m.to == user.name %>
 						<% value = m.body %>
-						 <div class="field">
-							<%= f.text_area(:body, :cols => 40, :rows => 20, :value => value) %>
-						</div>
+							 <div class="field">
+								<%= f.text_area(m.body, :cols => 40, :rows => 20, :value => value, :messageID => m.id) %>
+							</div>
+
 				<% end %>
 
 			<% end %>
 
-			<div class="actions">
-	    		<%= f.submit %>
-	  		</div>
+	    		<%= f.submit "Update" %>
 
-		<% end %>
-
+	  		<% end %>
 
 	<% end %>
 <% end %>
+
+<script type="text/javascript">
+
+
+
+
+
+$(document).ready(function() {
+	$.getJSON('/messages/1.json', function(data) {
+  var items = [];
+
+  $.each(data, function(key, val) {
+    items.push('<li id="' + key + '">' + val + '</li>');
+  });
+
+  $('<ul/>', {
+    'class': 'my-new-list',
+    html: items.join('')
+  }).appendTo('body');
+});
+
+$.ajax({
+    type: "PUT",
+    url: '/messages/1.json',
+    data: {body: "I have changed the body"} ,
+    dataType: 'json',
+    success: function(msg) {
+        alert(msg);
+    }
+});
+
+
+}
+
+
+
+</script>
