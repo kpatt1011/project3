@@ -19,8 +19,9 @@ Project3::Application.routes.draw do
 
   match 'groups' => 'groups#index'
   match 'users/groups' => 'groups#index'
-  match 'messages/groups { |match|  }' => 'groups#index'
+  match 'messages/groups' => 'groups#index'
 
+  match 'pages_editNiceThings' => 'pages#editNiceThings'
   match 'home' => 'pages#index'
 
 

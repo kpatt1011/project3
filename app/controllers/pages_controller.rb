@@ -10,6 +10,14 @@ class PagesController < ApplicationController
     end
   end
 
+  def editNiceThings
+    @pages = Page.all
+      respond_to do |format|
+        format.html
+        format.json { render json: @pages }
+      end
+  end
+
   # GET /pages/1
   # GET /pages/1.json
   def show
