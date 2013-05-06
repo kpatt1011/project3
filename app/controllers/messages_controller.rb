@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    # Only get the messages for the user currently signed in
     @messages = Message.all
 
     respond_to do |format|
