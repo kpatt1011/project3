@@ -214,7 +214,11 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
    require "omniauth-facebook"
-   config.omniauth :facebook, 'APP_ID', 'APP_SECRET', :strategy_class => OmniAuth::Strategies::Facebook, {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.cst'}}}
+   config.omniauth :facebook, 'APP_ID', 'APP_SECRET', :strategy_class => OmniAuth::Strategies::Facebook
+
+  # THE FOLLOWING TWO LINES ARE NEEDED FOR HEROKU
+  # ,{:scope => 'email, offline_access',
+  #:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.cst'}}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
