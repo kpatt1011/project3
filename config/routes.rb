@@ -9,7 +9,22 @@ Project3::Application.routes.draw do
 
   resources :users
 
-  root :to => 'users#index'
+  match 'users' => 'users#index'
+  match 'messsages/users' => 'users#index'
+  match 'groups/users' => 'users#index'
+
+  match 'messages' => 'messages#index'
+  match 'users/messages' => 'messages#index'
+  match 'groups/messages' => 'messages#index'
+
+  match 'groups' => 'groups#index'
+  match 'users/groups' => 'groups#index'
+  match 'messages/groups { |match|  }' => 'groups#index'
+
+  match 'home' => 'pages#index'
+
+
+  root :to => 'pages#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
