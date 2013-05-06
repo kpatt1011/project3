@@ -12,11 +12,6 @@
 </p>
 
 <p>
-  <b>Key:</b>
-  <%= @user.key %>
-</p>
-
-<p>
   <b>Group:</b>
   <% if @user.group != nil %>
       <%= @user.group.name%>
@@ -38,27 +33,20 @@
 
 </p>
 
-<p>
-
-  
-
-  
-
-</p>
-
-
-
-<p>
-	<b>Recieved Messages</b>
-  <br/>
-	<% @user.messages.each do |m| %>
-  <tr>
-    <%= link_to m.from, message_path(m) %>
+<%if current_user == @user%>
+    <p>
+    	<b>Recieved Messages</b>
     <br/>
-  </tr>
-
+    	<% @user.messages.each do |m| %>
+      <tr>
+      <%= link_to m.title, message_path(m) %>
+    <br/>
+    </tr>
   <% end %>
 </p>
+<%else%>
+    <b>You cannot view this user's messages!</b>
+<%end%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

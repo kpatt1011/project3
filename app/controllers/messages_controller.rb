@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     # Only get the messages for the user currently signed in
-    @messages = Message.all
+    @messages = current_user.messages
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,6 +44,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.user = User.where(:name => @message.to).first
+    @message.from = @message.user.name
     respond_to do |format|
       if @message.save
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
