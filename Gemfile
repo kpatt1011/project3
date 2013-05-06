@@ -20,7 +20,7 @@ gem 'devise'
 
 # Other authentication
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook' , '1.4.0'
 gem 'omniauth-facebook-access-token'
 
 gem 'sass-rails', '~> 3.2'
