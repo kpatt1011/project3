@@ -1,0 +1,43 @@
+<h2> Group </h2>
+
+	<% if current_user.group != nil %>
+		<% group = current_user.group %>
+		You are a member of <%= current_user.group.name %>
+					<br/>
+					<br/>
+				  <b>Name:</b>
+				  <%= group.name %>
+				</p>
+
+				<p>
+				  <b>Group Code</b>
+				  <%= group.id %>
+				</p>
+
+				<p>
+				  <b>Location:</b>
+				  <%= group.location %>
+				</p>
+
+					<p>
+				  <b>Total Members: </b>
+				  <%= group.users.count %>
+				</p>
+
+				<p>
+				  <b>Members:</b>
+				  <% group.users.each do |user|   %>
+				  <tr>
+				  	<br/>
+				    <td><%= link_to user.name, user_path(user) %></td>
+				  </tr>
+				  <% end %>
+				</p>
+				<%= link_to "Leave Group", "pages_joinGroup", :class => "btn btn-success btn-mini", :style => "color:white;" %>
+
+	<% else %>
+		You haven't joined a group yet!
+		<br/>
+		<br/>
+		<%= link_to "Join Group", "pages_joinGroup", :class => "btn btn-success btn-mini", :style => "color:white;" %>
+	<% end %>
