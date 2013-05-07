@@ -1,9 +1,11 @@
 <h2> Edit Nice things </h2>
 
+<% unless current_user.nil? %>
 <% unless current_user.group.nil? %>
 <h6> Group: <%= current_user.group.name %> </h6>
-<% end %
+<% end %>
 <h6> Member: <%= current_user.name %> </h6>
+<%end%>
 <br/>
 
 
