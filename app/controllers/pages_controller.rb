@@ -20,7 +20,8 @@ class PagesController < ApplicationController
       end
   end
   
-   def viewGroup
+   def joinGroup
+      @groups = Group.all
       respond_to do |format|
         format.html
         format.json { render json: @pages }
