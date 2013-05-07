@@ -16,15 +16,20 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
-    if not(@message.user.group.messages_released)
-      @message = nil
-    end
-    if not((@message.user == current_user) || (@message.from == current_user.name))
-      @message = nil
+    @redirect = false
+    if (!(@message.user.group.messages_released) && !(@message.from == current_user.name))
+      @redirect = true
+    elsif not((@message.user == current_user) || (@message.from == current_user.name))
+      @redirect = true
     end
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @message }
+      if @redirect
+      	format.html { redirect_to :action => "index", notice: 'You may not view that.' }
+      	format.json { render json: @message.errors, status: :unprocessable_entity }
+      else
+        format.html # show.html.erb
+        format.json { render json: @message }
+      end
     end
   end
 
@@ -32,6 +37,7 @@ class MessagesController < ApplicationController
   # GET /messages/new.json
   def new
     @message = Message.new
+    @people = User.where(:group_id => current_user.group_id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,12 +55,12 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.user = User.where(:name => @message.to).first
-    @message.from = @message.user.name
+    @message.from = current_user.name
     unless @message.user.image_url.nil?
         @message.associated_images = @message.user.image_url
     end
     respond_to do |format|
-      if @message.save && (@message.user.group == User.where(:name => @message.from).first.group)
+      if @message.save && (@message.user.group_id == User.where(:name => @message.from).first.group_id)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message}
       else

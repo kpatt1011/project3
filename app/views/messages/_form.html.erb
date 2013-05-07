@@ -19,10 +19,7 @@
     <%= f.label :body %><br />
     <%= f.text_field :body %>
   </div>
-  <div class="field">
-    <%= f.label :to %><br />
-    <%= f.text_field :to %>
-  </div>
+  <%= f.collection_select(:to, @people, :name, :name, {:prompt => true}) %>
   <div class="actions">
     <%= f.submit %>
   </div>
