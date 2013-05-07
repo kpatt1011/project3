@@ -15,15 +15,15 @@
     <a class="brand" href="/">NT</a>
     <ul class="nav">
       <li class="divider-vertical"></li>
-      <li class><a href="pages_editNiceThings">Edit</a></li>
+      <li class><%= link_to 'Edit', pages_editNiceThings_path %></li>
       <li class="divider-vertical"></li>
-      <li class><a href="pages_viewGroup">Group</a></li>
+      <li class><%= link_to 'Group', pages_viewGroup_path %></li>
       <li class="divider-vertical"></li>
-      <li class><a href="users">Users</a></li>
+      <li class><%= link_to 'Users', users_path %></li>
       <li class="divider-vertical"></li>
-      <li><a href="groups">Groups</a></li>
+      <li><%= link_to 'Groups', groups_path %></li>
       <li class="divider-vertical"></li>
-      <li><a href="messages">Messages</a></li>
+      <li><%= link_to 'Messages', messages_path %></li>
       <li class="divider-vertical"></li>
     </ul>
     <div class="navbar-text pull-right">
