@@ -54,11 +54,11 @@ class MessagesController < ApplicationController
         @message.associated_images = @message.user.image_url
     end
     respond_to do |format|
-      if @message.save
+      if @message.save && (@message.user.group == User.where(:name => @message.from).first.group)
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message}
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", notice: 'Users not of the same group' }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
