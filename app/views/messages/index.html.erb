@@ -26,6 +26,12 @@
 <% end %>
 </table>
 
+
 <br />
 
 <%= link_to 'New Message', new_message_path %>
+
+<br />
+
+<h2>Download available messages as JSON</h2>
+<%= link_to "Download JSON of messages", current_url(:format=>:json) , :target => "_blank"%>

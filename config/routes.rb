@@ -27,6 +27,8 @@ Project3::Application.routes.draw do
   match 'home' => 'pages#index'
   
   match '/auth/:provider/callback' => 'omniauth_callbacks#facebook'
+  
+  match 'download' => 'messages#download'
 
   devise_scope :user do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'

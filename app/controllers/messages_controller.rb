@@ -1,5 +1,9 @@
 class MessagesController < ApplicationController
   before_filter :authenticate_user!
+  
+  def current_url(new_params)
+    url_for params.merge(new_params)
+  end
   # GET /messages
   # GET /messages.json
   def index
@@ -12,7 +16,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @messages }
+      format.json { send_data @messages }
     end
   end
 
