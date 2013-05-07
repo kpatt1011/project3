@@ -4,7 +4,11 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     # Only get the messages for the user currently signed in
-    @messages = current_user.messages
+    if current_user.group.messages_released
+    	@messages = current_user.messages
+    else
+    	@messages = {}
+    end
 
     respond_to do |format|
       format.html # index.html.erb
