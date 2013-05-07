@@ -12,8 +12,10 @@
     <td style="padding-right:10px;"><%= group.name %></td>
     <td style="padding-right:10px;"><%= group.location %></td>
     <td  style="padding-right:10px;"><%= button_to 'Show', group, :class => "btn btn-info btn-mini",  :method => :get %></td>
-    <td  style="padding-right:10px;"><%= button_to 'Edit', edit_group_path(group), :class => "btn btn-primary btn-mini", :method => :get %></td>
-    <td><%= button_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini",  :method => :get %> </td>
+    <%if current_user.group.name == group.name%>
+      <td  style="padding-right:10px;"><%= button_to 'Edit', edit_group_path(group), :class => "btn btn-primary btn-mini", :method => :get %></td>
+      <td><%= button_to 'Delete', group, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini",  :method => :get %> </td>
+    <%end%>
   </tr>
 <% end %>
 </table>
