@@ -1,9 +1,53 @@
 body {
-  background-color: white;
+  background-color: #E1D4C0;
   color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+.navbar .nav > li > a {
+  text-shadow: 0 1px 0 gray;
+}
+
+.navbar {
+    background: #6699FF;
+}
+
+.nav {
+  background: #6699FF;
+}
+.alert {
+margin-top: 40px;
+}
+.navbar > .navbar-inner > .container {
+  background: #6699FF;
+}
+
+.divider-vertical {
+  background:#E1D4C0;
+  border-left: 1px solid #E1D4C0;
+border-right: 1px solid #E1D4C0;
+}
+
+.navbar-text {
+  color:white;
+}
+.navbar > .navbar-inner > .container > .brand {
+  background:#6699FF;
+  color:white;
+}
+
+.navbar > .navbar-inner > .container > .brand > ul > li {
+  color:white;
+}
+
+.navbar .nav > li > a {
+  color:white;
+}
+
+.navbar > .navbar-inner {
+  background: #6699FF;
 }
 
 p, ol, ul, td {

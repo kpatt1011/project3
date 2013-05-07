@@ -9,7 +9,7 @@
 <body>
 
  <div class="container">
- <div class="navbar">
+ <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
   <div class="container">
     <a class="brand" href="/">NT</a>
@@ -46,6 +46,7 @@
   </div>
   </div>
 </div>
+<div style="margin-top:40px;">
 	<% if flash[:notice] %>
       <p class="notice"><%= flash[:notice] %></p>
     <% end %>
@@ -55,7 +56,18 @@
     <% if flash[:alert] %>
       <p class="alert"><%= flash[:alert] %></p>
     <% end %>
+  
 	<%= yield %>
+</div>
+
+   <footer>
+      <div class="container">
+        <hr>
+        <p>&copy; Team 10 | Keith Pattison | Travis Williamson | Paul Unger        </p>
+        
+      </div>
+    </footer>
+
 
  </div>
 

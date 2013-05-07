@@ -64,8 +64,8 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     @message.user = User.where(:name => @message.to).first
     @message.from = current_user.name
-    unless @message.user.image_url.nil?
-        @message.associated_images = @message.user.image_url
+    unless current_user.image_url.nil?
+        @message.associated_images = current_user.image_url
     end
     respond_to do |format|
       if @message.save && (@message.user.group_id == User.where(:name => @message.from).first.group_id)
