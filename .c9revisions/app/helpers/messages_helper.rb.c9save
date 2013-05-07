@@ -1,2 +1,0 @@
-{"ts":1367865500528,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"module MessagesHelper\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":26}]],"length":26}
-{"contributors":[],"silentsave":false,"ts":1367898645499,"patch":[[{"diffs":[[0,"sHelper\n"],[1,"  def current_url(new_params)\n    url_for params.merge(new_params)\n  end\n"],[0,"end\n"]],"start1":14,"start2":14,"length1":12,"length2":85}]],"length":99,"saved":false}

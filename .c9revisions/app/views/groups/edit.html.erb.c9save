@@ -1,1 +1,0 @@
-{"ts":1367880065936,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>Editing group</h1>\n\n<%= render 'form' %>\n\n<%= link_to 'Show', @group %> |\n<%= link_to 'Back', groups_path %>\n"]],"start1":0,"start2":0,"length1":0,"length2":113}]],"length":113}
