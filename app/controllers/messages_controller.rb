@@ -51,7 +51,9 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    @people = User.where(:group_id => current_user.group_id)
     @message = Message.find(params[:id])
+    @message.user = User.where(:name => @message.to).first
   end
 
   # POST /messages
