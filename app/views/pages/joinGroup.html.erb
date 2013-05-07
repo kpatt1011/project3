@@ -17,10 +17,8 @@
 
   <p style="font-size:12px;">To remove yourself from all groups just submit this form with a 0 as the ID number. </p>
   <br/>
-   <div class="field">
-    <%= f.label "Enter Group ID Number" %>
-    <%= f.text_field :group_id %>
-  </div>
+  
+  <%= f.collection_select(:group_id, @groups, :id, :name, {:prompt => true}) %>
 
    <div class="actions">
     <%= f.submit %>
