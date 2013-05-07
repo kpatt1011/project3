@@ -42,7 +42,8 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(params[:group])
-
+    @group.founder_username = current_user.name
+    User.where(:name == @group.founder_username).first.is_admin = true
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }

@@ -16,17 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :admin_key %><br />
-    <%= f.text_field :admin_key %>
-  </div>
-  <div class="field">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </div>
-  <div class="field">
-    <%= f.label :'Release the messages?' %><br />
-    <%= f.check_box :messages_released %>
-  </div>
+  <%if @group.founder_username == current_user.name%>
+    <div class="field">
+      <%= f.label :'Release the messages?' %><br />
+      <%= f.check_box :messages_released %>
+    </div>
+  <% end %>
 
 <p>
   <b>Users</b>
